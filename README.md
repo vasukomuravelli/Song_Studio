@@ -1,6 +1,6 @@
 # Song_Studio
 
-Hey all, Welcome to song studio where users can listen to the songs and also navigate between songs with just a single tap. This website wass completely built from scratch.
+Hey all, Welcome to the song studio where users can listen to the songs and also navigate between songs with just a single tap. This website was completely built from scratch.
 
 # TechStack used: 
 - ReactJS
@@ -10,7 +10,7 @@ Hey all, Welcome to song studio where users can listen to the songs and also nav
 
 # Landing Page
 
-Landing page features the songs, player, sorting options and the options to switch between grid layout & list layout.
+The landing page features the songs, player, sorting options, and the options to switch between grid layout & list layout.
 
 # showing the grid view
 
@@ -36,4 +36,4 @@ Showing a playing animation when the song gets played. And also switch between t
 
 ![image](https://user-images.githubusercontent.com/91777048/158012464-92ca4294-5fcf-416b-9b0d-baf02a709938.png)
 
-Find the real time deployment : https://song-studio-vasukomuravelli96-gmailcom.vercel.app/
+Find the real-time deployment: https://song-studio-vasukomuravelli96-gmailcom.vercel.app/
