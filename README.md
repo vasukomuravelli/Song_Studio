@@ -1,6 +1,6 @@
 # Song_Studio
 
-Hey all, Welcome to song studio where users can listen to the songs and also navigate between songs with just a single tap.
+Hey all, Welcome to song studio where users can listen to the songs and also navigate between songs with just a single tap. This website wass completely built from scratch.
 
 # TechStack used: 
 - ReactJS
