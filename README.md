@@ -28,9 +28,9 @@ Showing a playing animation when the song gets played. And also switch between t
 
 # Responsive 
 
-Tablet view : 
+- Tablet view : 
 ![image](https://user-images.githubusercontent.com/91777048/158012388-acda33ad-5e37-43c5-8a80-4eb4607003c2.png)
-Mobile View : 
+- Mobile View : 
 ![image](https://user-images.githubusercontent.com/91777048/158012464-92ca4294-5fcf-416b-9b0d-baf02a709938.png)
 
 Find the real time deployment : https://song-studio-vasukomuravelli96-gmailcom.vercel.app/
