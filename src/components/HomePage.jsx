@@ -4,6 +4,7 @@ import { ImPlay3, ImNext2, ImPrevious2 } from "react-icons/im"
 import { IoIosPause } from "react-icons/io";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { Select } from 'antd';
+import {BsFillGrid3X3GapFill,BsList} from "react-icons/bs"
 const { Option } = Select;
 
 export const HomePage = () => {
@@ -12,6 +13,7 @@ export const HomePage = () => {
     const [current, setCurrent] = React.useState({});
     const [isPlaying, setIsPlaying] = React.useState(false);
     const [isLoading, setLoading] = React.useState("");
+    const [isgrid, setIsgrid] = React.useState(true);
     const audio = React.useRef();
     React.useEffect(() => {
         getData()
@@ -76,15 +78,30 @@ export const HomePage = () => {
                         <Option value="z2a">Sort Z - A</Option>
                     </Select>
                 </div>
+                <div>
+                    <BsFillGrid3X3GapFill className="layout" onClick={()=>setIsgrid(true)}/>
+                    <BsList className="layout" onClick={()=>setIsgrid(false)}/>
+                </div>
             </div>
-            <div className="gallery">
+            {isgrid ? <div className="gallery">
                 {songsdata.map((s) => (
                     <div key = {s.song} onClick={()=>handleSong(s)}>
-                        <img src={s.cover_image} alt={s.song} />
+                        <div>
+                            <img src={s.cover_image} alt={s.song} />
+                        </div>
                         <h1>{s.song}</h1>
                         <p>{s.artists}</p>
                     </div>))}
-            </div>
+            </div> : <div className="galleryflex">
+                {songsdata.map((s) => (
+                    <div key={s.song} onClick={() => handleSong(s)}>
+                        <div>
+                            <img src={s.cover_image} alt={s.song} />
+                        </div>
+                        <h1>{s.song}</h1>
+                        <p>{s.artists}</p>
+                    </div>))}
+            </div>}
             {current.song ? <div className="player">
                 <div>
                     <img src={current?.cover_image} alt={current?.song} />
@@ -97,9 +114,9 @@ export const HomePage = () => {
                     <p>{current.artists}</p>
                 </div>
                 <div id="contols">
-                    <ImPrevious2 onClick={() => handleSong(songsdata[songsdata.indexOf(current) - 1 < 0 ? songsdata.length - 1 : songsdata.indexOf(current) - 1])} style={{fontSize:"30px",cursor:"pointer"}}/>
-                    {isLoading ? <AiOutlineLoading3Quarters style={{ fontSize: "25px" }} className="loader"/> :isPlaying ? <IoIosPause onClick={()=>handlePause("true")} style={{fontSize:"30px",cursor:"pointer"}}/> : <ImPlay3 onClick={()=>handlePause("false")} style={{fontSize:"30px",cursor:"pointer"}}/>}
-                    <ImNext2 onClick={()=>handleSong(songsdata[songsdata.indexOf(current)+1 > songsdata.length-1 ? 0 : songsdata.indexOf(current)+1])} style={{fontSize:"30px",cursor:"pointer"}}/>
+                    <ImPrevious2 onClick={() => handleSong(songsdata[songsdata.indexOf(current) - 1 < 0 ? songsdata.length - 1 : songsdata.indexOf(current) - 1])}  className="controls"/>
+                    {isLoading ? <AiOutlineLoading3Quarters style={{ fontSize: "25px" }} className="loader"/> :isPlaying ? <IoIosPause onClick={()=>handlePause("true")}  className="controls"/> : <ImPlay3 onClick={()=>handlePause("false")} className="controls"/>}
+                    <ImNext2 onClick={()=>handleSong(songsdata[songsdata.indexOf(current)+1 > songsdata.length-1 ? 0 : songsdata.indexOf(current)+1])}  className="controls"/>
                 </div>
                 <div>
                     {!audio.current?.paused ? <img src="https://i.gifer.com/YdBO.gif" alt="song playing"/> : null}
