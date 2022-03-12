@@ -126,6 +126,10 @@ body {
   width: 60px;
   cursor: pointer;
 }
+.controls {
+  font-size: 30px;
+  cursor: pointer;
+}
 @media (max-width: 900px) {
   .gallery {
     display: grid;
